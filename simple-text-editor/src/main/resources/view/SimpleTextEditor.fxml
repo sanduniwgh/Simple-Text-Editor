@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.SimpleTextEditorController">
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.SimpleTextEditorController">
    <children>
       <VBox prefHeight="27.0" prefWidth="600.0" AnchorPane.bottomAnchor="376.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -15,17 +15,26 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem fx:id="menuNew" mnemonicParsing="false" onAction="#menuNewOnAction" text="New" />
+                        <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#menuOpenOnAction" text="Open" />
+                        <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#menuSaveOnAction" text="Save" />
+                        <MenuItem fx:id="menuSaveAs" mnemonicParsing="false" onAction="#menuSaveAsOnAction" text="Save As..." />
+                        <MenuItem fx:id="menuPrint" mnemonicParsing="false" onAction="#menuPrintOnAction" text="Print" />
+                    <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#menuExitOnAction" text="Exit" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem fx:id="menuCut" mnemonicParsing="false" onAction="#menuCutOnAction" text="Cut" />
+                        <MenuItem fx:id="menuCopy" mnemonicParsing="false" onAction="#mnuCopyOnAction" text="Copy" />
+                        <MenuItem fx:id="menuPaste" mnemonicParsing="false" onAction="#menuPasteOnAction" text="Paste" />
+                    <MenuItem fx:id="menuSelectAll" mnemonicParsing="false" onAction="#menuSelectAllOnAction" text="Select All" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem fx:id="menuUserGuide" mnemonicParsing="false" onAction="#menuUserGuideOnAction" text="User Guide" />
+                    <MenuItem fx:id="menuAboutUs" mnemonicParsing="false" onAction="#menuAboutUsOnAction" text=" About Us" />
                   </items>
                 </Menu>
               </menus>

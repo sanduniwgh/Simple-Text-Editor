@@ -16,7 +16,7 @@
               <Image url="@../assert/text-edit-icon-31.png" />
           </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" ellipsisString="%key.unspecified" layoutX="68.0" layoutY="51.0" prefHeight="31.0" prefWidth="439.0" text="Simple Text Editor" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="318.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="51.0">
+      <Label alignment="CENTER" contentDisplay="CENTER"  layoutX="68.0" layoutY="51.0" prefHeight="31.0" prefWidth="439.0" text="Simple Text Editor" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="318.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="51.0">
          <font>
             <Font name="FreeSerif Bold" size="28.0" />
          </font>
