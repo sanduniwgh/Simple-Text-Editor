@@ -64,8 +64,9 @@ public class SimpleTextEditorController {
     }
 
     @FXML
-    void menuExitOnAction(ActionEvent event) {
-
+     void menuExitOnAction(ActionEvent event) {
+      Stage stage=(Stage)root.getScene().getWindow();
+      stage.close();
     }
 
     @FXML
