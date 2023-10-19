@@ -42,10 +42,8 @@ public class AppInitializer extends Application {
 
                 // Get the controller from the loader
                 SimpleTextEditorController controller = loader.getController();
-
                 // Initialize the controller if needed
                 // controller.initialize();
-
                 Stage editorStage = new Stage();
                 editorStage.setScene(editorScene);
                 editorStage.setTitle("Simple Text Editor");
@@ -58,8 +56,6 @@ public class AppInitializer extends Application {
 
                 // Close the splash stage
                 primaryStage.close();
-
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -6,10 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.DataFormat;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.HTMLEditor;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.swing.*;
+import java.io.*;
 
 public class SimpleTextEditorController {
 
@@ -105,7 +112,40 @@ public class SimpleTextEditorController {
 
     @FXML
     void menuSaveAsOnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
 
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        fileChooser.setInitialFileName("Untitled Document1");
+
+        File file = fileChooser.showSaveDialog(root.getScene().getWindow());
+
+        if (file != null) {
+            saveTextFile(file);
+        }
+    }
+
+    private void saveTextFile(File file) {
+        HTMLEditor htmlEditor =(HTMLEditor) root.getChildren().get(1);
+        String content = htmlEditor.getHtmlText();
+
+
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter writer = new BufferedWriter(fw);
+            String normalText= htmlConvertToText(content);
+            writer.write(normalText);
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    private String htmlConvertToText(String hcontent) {
+        return hcontent.replaceAll("\\<.*?\\>","");
     }
 
     @FXML
