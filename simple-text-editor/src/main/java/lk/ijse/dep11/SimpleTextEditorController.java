@@ -104,6 +104,8 @@ public class SimpleTextEditorController {
 
     @FXML
     void menuOpenOnAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(root.getScene().getWindow());
 
     }
 

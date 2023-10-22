@@ -5,4 +5,5 @@
 
 ### License
 
-This project is license under the [License](Lisence.txt)
+Copyright &copy: 2023 S.W.G Haththotuwa <br>
+This project is licensed under this [License](Lisence.txt)
