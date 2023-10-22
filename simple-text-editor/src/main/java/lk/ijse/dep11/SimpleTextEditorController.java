@@ -14,9 +14,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 
 import javax.swing.*;
 import java.io.*;
+
 
 public class SimpleTextEditorController {
 
@@ -56,6 +61,8 @@ public class SimpleTextEditorController {
 
     @FXML
     private MenuItem menuUserGuide;
+
+    private File currentFile;
 
     @FXML
     void menuAboutUsOnAction(ActionEvent event)throws Exception {
@@ -111,7 +118,7 @@ public class SimpleTextEditorController {
     }
 
     @FXML
-    void menuSaveAsOnAction(ActionEvent event) {
+    File menuSaveAsOnAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
 
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text files (*.txt)", "*.txt");
@@ -121,36 +128,48 @@ public class SimpleTextEditorController {
 
         File file = fileChooser.showSaveDialog(root.getScene().getWindow());
 
+
         if (file != null) {
             saveTextFile(file);
+            currentFile=file;
         }
+        return currentFile;
     }
+
 
     private void saveTextFile(File file) {
         HTMLEditor htmlEditor =(HTMLEditor) root.getChildren().get(1);
         String content = htmlEditor.getHtmlText();
 
-
         try {
             FileWriter fw = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fw);
-            String normalText= htmlConvertToText(content);
+            String normalText= htmlToNormalText(content);
             writer.write(normalText);
             writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
+    private String htmlToNormalText(String html) {
+        Document document = Jsoup.parse(html);
+        document.select("div").prepend("\\n");
+        document.select("p").prepend("\\n");
 
-    private String htmlConvertToText(String hcontent) {
-        return hcontent.replaceAll("\\<.*?\\>","");
+        String text = document.text();
+        text = StringEscapeUtils.unescapeJava(text);
+
+        return text;
     }
 
     @FXML
-    void menuSaveOnAction(ActionEvent event) {
 
+    void menuSaveOnAction(ActionEvent event) {
+        if (currentFile != null) {
+            saveTextFile(currentFile);
+        } else {
+            menuSaveAsOnAction(event);
+        }
     }
 
     @FXML
