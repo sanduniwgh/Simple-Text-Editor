@@ -69,7 +69,6 @@ public class SimpleTextEditorController {
 
 
 
-
     }
 
     @FXML
@@ -107,6 +106,41 @@ public class SimpleTextEditorController {
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(root.getScene().getWindow());
 
+        if(file != null){
+
+            currentFile = file;
+            openTextFile(file);
+        }
+
+    }
+
+    private  void  openTextFile(File file){
+
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br= new BufferedReader(fr);
+            StringBuilder content = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null){
+                content.append(line).append("\n");
+            }
+
+            br.close();
+
+            HTMLEditor htmlEditor =(HTMLEditor) root.getChildren().get(1);
+            htmlEditor.setHtmlText(textToHtml(content.toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private String textToHtml(String text) {
+        // Replace newlines with HTML line breaks
+        String htmlText = text.replaceAll("\\n", "<br>");
+        // Wrap the entire content in paragraph tags
+        htmlText = "<p>" + htmlText + "</p>";
+        return htmlText;
     }
 
     @FXML
