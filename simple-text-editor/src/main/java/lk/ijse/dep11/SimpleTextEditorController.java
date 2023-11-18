@@ -66,6 +66,24 @@ public class SimpleTextEditorController {
 
     @FXML
     void menuAboutUsOnAction(ActionEvent event)throws Exception {
+        AnchorPane aboutRoot= FXMLLoader.load(getClass().getResource("/view/AboutUs.fxml"));
+        Scene aboutScene= new Scene(aboutRoot);
+        Stage newStage =new Stage();
+        newStage.setScene(aboutScene);
+
+        newStage.sizeToScene();
+        newStage.centerOnScreen();
+        newStage.setTitle("Simple Text Editor");
+
+        FadeTransition fade = new FadeTransition(Duration.millis(200),aboutRoot);
+        fade.setFromValue(0);
+        fade.setToValue(1);
+        fade.playFromStart();
+        newStage.show();
+
+
+
+
 
 
 
@@ -214,7 +232,24 @@ public class SimpleTextEditorController {
     }
 
     @FXML
-    void menuUserGuideOnAction(ActionEvent event) {
+    void menuUserGuideOnAction(ActionEvent event)throws Exception {
+
+        AnchorPane userGuideRoot= FXMLLoader.load(getClass().getResource("/view/UserGuide.fxml"));
+        Scene userGuideScene= new Scene(userGuideRoot);
+        Stage newStage =new Stage();
+        newStage.setScene(userGuideScene);
+
+        newStage.sizeToScene();
+        newStage.centerOnScreen();
+        newStage.setTitle("Simple Text Editor");
+
+        FadeTransition fade = new FadeTransition(Duration.millis(200),userGuideRoot);
+        fade.setFromValue(0);
+        fade.setToValue(1);
+        fade.playFromStart();
+        newStage.show();
+
+
 
     }
 

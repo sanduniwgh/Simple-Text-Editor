@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutX="30.0" layoutY="37.0" prefHeight="327.0" prefWidth="502.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <HBox prefHeight="134.0" prefWidth="603.0">
+               <children>
+                  <ImageView fitHeight="84.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert/text-edit-icon-31.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="39.0" prefWidth="333.0" text="Simple Text Editor">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+      <TextArea layoutX="-1.0" layoutY="119.0" prefHeight="267.0" prefWidth="600.0" text="&#10;1. New Document:&#10;    Click on File &gt; New to create a new text document.&#10;    This will open a new instance of the text editor.&#10;&#10;2. Open Document:&#10;    Click on File &gt; Open to select and open an existing text file.&#10;    Choose a file from the file explorer and click &quot;Open.&quot;&#10;&#10;3. Save Document:&#10;    Click on File &gt; Save to save the current document.&#10;    If it's a new document, you'll be prompted to choose a location and provide a name.&#10;&#10;4. Save As:&#10;    Click on File &gt; Save As to save the document with a different name or in a different location.&#10;    Choose the destination and enter a name for the file.&#10;&#10;5. Copy, Cut, Paste:&#10;    Use the standard keyboard shortcuts (Ctrl+C, Ctrl+X, Ctrl+V) or right-click menu for copy, cut, and paste operations.&#10;&#10;6. Select All:&#10;    Click on Edit &gt; Select All to highlight the entire document for easy copying or deleting.&#10;&#10;7. About Us:&#10;    Click on Help &gt; About Us to learn more about the text editor and its developers.&#10;&#10;8. User Guide:&#10;    Click on Help &gt; User Guide to access additional information and guidelines on using the text editor.&#10;&#10;9. Exit:&#10;    Click on File &gt; Exit or use the window close button to exit the text editor.&#10;&#10;Additional Tips:&#10;    The text editor supports basic formatting using the HTML editor.&#10;    To view or edit the HTML source, use the HTML editor provided.&#10;    Check for updates and additional features in future releases.&#10;&#10;Note:&#10;&#10;    Ensure to save your work regularly to prevent data loss.&#10;    The editor supports plain text and basic HTML formatting.&#10;&#10;Feel free to explore and enjoy using the Simple Text Editor!" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0" />
+   </children>
+</AnchorPane>

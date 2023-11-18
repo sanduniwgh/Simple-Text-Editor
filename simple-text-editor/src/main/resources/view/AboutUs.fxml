@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.AboutUsController">
+   <children>
+      <TextArea layoutX="33.0" layoutY="61.0" prefHeight="301.0" prefWidth="534.0" text="                          Welcome to Our Simple Text Editor App!&#10;&#10;This is a basic text editor application that allows you to create, edit, and save text documents. It's designed to be user-friendly and straightforward.&#10;&#10;Thank you for using our app!&#10;&#10;- The Simple Text Editor Team&#10;&#10;Copyright © 2023 SWG Haththotuwa. All rights reserved.&#10;" wrapText="true" />
+   </children>
+</AnchorPane>
