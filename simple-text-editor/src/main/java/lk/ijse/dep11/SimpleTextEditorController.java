@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.DataFormat;
+import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
@@ -17,15 +17,15 @@ import javafx.util.Duration;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
-
-import javax.swing.*;
 import java.io.*;
+
+
 
 
 public class SimpleTextEditorController {
 
     public AnchorPane root;
+    public HTMLEditor htmlEditor;
     @FXML
     private MenuItem menuAboutUs;
 
@@ -64,6 +64,7 @@ public class SimpleTextEditorController {
 
     private File currentFile;
 
+
     @FXML
     void menuAboutUsOnAction(ActionEvent event)throws Exception {
         AnchorPane aboutRoot= FXMLLoader.load(getClass().getResource("/view/AboutUs.fxml"));
@@ -81,18 +82,19 @@ public class SimpleTextEditorController {
         fade.playFromStart();
         newStage.show();
 
-
-
-
-
-
-
     }
+
 
     @FXML
     void menuCutOnAction(ActionEvent event) {
 
+
+
     }
+
+
+
+
 
     @FXML
      void menuExitOnAction(ActionEvent event) {
@@ -228,6 +230,7 @@ public class SimpleTextEditorController {
 
     @FXML
     void menuSelectAllOnAction(ActionEvent event) {
+
 
     }
 
